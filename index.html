@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0620">
+<title>Layal Alsharif · AI Engineer</title>
+<meta name="description" content="Layal Alsharif, AI graduate building LLM applications that read documents and return structured results.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0620;--card:rgba(32,18,68,.55);--line:rgba(167,125,255,.22);--text:#f2ecff;--muted:#b0a2d4;--a:#8b5cf6;--b:#c084fc;--c:#f0abfc}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);font-family:"Source Sans 3",system-ui,sans-serif;font-size:18px;line-height:1.6;overflow-x:hidden}
+a{color:var(--b)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+#bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%}
+.glow{position:fixed;z-index:-1;border-radius:50%;filter:blur(110px);opacity:.35;pointer-events:none}
+.g1{width:480px;height:480px;background:var(--a);top:-120px;left:-120px}
+.g2{width:420px;height:420px;background:#c026d3;bottom:-140px;right:-100px;opacity:.22}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:Sora,system-ui,sans-serif;line-height:1.2}
+.grad{background:linear-gradient(100deg,var(--b),var(--c) 55%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+header.bar{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9;width:min(920px,calc(100% - 28px));background:rgba(20,10,46,.7);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 24px;display:flex;justify-content:space-between;align-items:center}
+.bar b{font-family:Sora,sans-serif}
+.bar nav{display:flex;align-items:center;gap:20px}
+.bar nav a{color:var(--muted);text-decoration:none;font-size:16px}
+.bar nav a:hover{color:var(--text)}
+.bar nav a.cta{background:linear-gradient(100deg,var(--a),var(--b));color:#fff;padding:8px 20px;border-radius:999px;font-weight:600}
+.btn{display:inline-block;padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:600;font-size:16px;margin:0 10px 10px 0;transition:transform .2s,box-shadow .2s}
+.btn.main{background:linear-gradient(100deg,var(--a),var(--b));color:#fff;box-shadow:0 8px 28px rgba(139,92,246,.45)}
+.btn.main:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(168,85,247,.6)}
+.btn.alt{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.04)}
+.btn.alt:hover{border-color:var(--b)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 60px}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 18px;font-size:15px;color:var(--muted);margin-bottom:28px}
+.dot{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(74,222,128,0)}}
+.hero h1{font-size:clamp(46px,10vw,104px);font-weight:800;letter-spacing:-.02em}
+.role{font-family:Sora,sans-serif;font-size:clamp(18px,3vw,26px);margin:18px 0 20px;min-height:1.4em;color:var(--text)}
+.role i{display:inline-block;width:3px;height:1em;background:var(--c);margin-left:4px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p{color:var(--muted);max-width:52ch;margin:0 auto 30px}
+.scroll{margin-top:40px;color:var(--muted);font-size:14px}
+section{padding:90px 0}
+.label{color:var(--b);font-size:16px;font-weight:600;margin-bottom:8px}
+.head h2{font-size:clamp(28px,4.5vw,42px);max-width:22ch;margin-bottom:38px}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:20px;backdrop-filter:blur(10px);transition:transform .25s,border-color .25s,box-shadow .25s}
+.glass:hover{transform:translateY(-5px);border-color:rgba(192,132,252,.6);box-shadow:0 18px 50px rgba(139,92,246,.22)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
+.about p{color:var(--muted);margin-bottom:16px}
+.about p b{color:var(--text)}
+.glance{padding:26px;align-self:start}
+.glance h3{font-size:18px;margin-bottom:16px}
+.glance dt{color:var(--muted);font-size:15px}
+.glance dd{margin:0 0 12px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.skill{padding:24px}
+.skill .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--a),var(--b));font-family:Sora,sans-serif;font-size:15px;margin-bottom:14px}
+.soft{margin-top:20px}
+.skill h3{font-size:20px;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);background:rgba(139,92,246,.1);border-radius:999px;padding:3px 14px;font-size:15px}
+.case{padding:0;overflow:hidden;margin-bottom:24px}
+.case:hover{transform:none}
+.case .body{display:grid;grid-template-columns:1.05fr .95fr}
+.case .info{padding:36px}
+.case .top{color:var(--muted);font-size:16px;margin-bottom:10px}
+.case .top b{color:var(--b);font-family:Sora,sans-serif;margin-right:10px}
+.case h3{font-size:30px;margin-bottom:14px}
+.case .info>p{color:var(--muted);margin-bottom:20px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:rgba(139,92,246,.08)}
+.stat b{display:block;font-family:Sora,sans-serif;font-size:28px}
+.stat span{color:var(--muted);font-size:14px;line-height:1.3;display:block}
+.demo{background:linear-gradient(160deg,rgba(139,92,246,.28),rgba(192,38,211,.12));padding:36px;display:flex;flex-direction:column;justify-content:center}
+.demo small{color:var(--muted);text-align:center;margin-top:14px;font-size:14px}
+[hidden]{display:none!important}
+button.btn{border:0;cursor:pointer;font-family:inherit}
+.btn.off{opacity:.55;pointer-events:none}
+.mine b{color:var(--text)}
+.links.row{margin:0 0 4px}
+.vid{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#120a2a;box-shadow:0 20px 60px rgba(0,0,0,.45);display:grid;place-items:center}
+.vid img{width:100%;height:100%;object-fit:contain;display:block}
+.ph.pic i::before{margin:0;width:22px;height:16px;border:2px solid #fff;border-radius:4px}
+.case .info>p+p{margin-top:-6px}
+.vid video{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.vid iframe{width:100%;height:100%;border:0}
+.ph{text-align:center;color:var(--muted);font-size:16px}
+.ph i{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 12px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b))}
+.ph i::before{content:"";margin-left:5px;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.more{padding:0 36px 32px}
+details{border-top:1px solid var(--line);padding-top:18px}
+summary{cursor:pointer;color:var(--b);font-weight:600}
+details h4{font-size:17px;margin:22px 0 12px}
+.flow{display:flex;gap:12px;flex-wrap:wrap}
+.step{flex:1 1 130px;border:1px solid var(--line);background:rgba(139,92,246,.1);border-radius:12px;padding:10px 14px;font-size:16px;position:relative}
+.step small{display:block;color:var(--muted);font-size:14px}
+.step:not(:last-child)::after{content:"";position:absolute;right:-10px;top:50%;width:8px;height:8px;border-top:2px solid var(--c);border-right:2px solid var(--c);transform:translateY(-50%) rotate(45deg)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;color:var(--muted)}
+.links{margin-top:24px}
+.soon{padding:22px 26px;margin-bottom:16px;border-style:dashed}
+.soon h3{font-size:21px;margin:2px 0}
+.soon p{color:var(--muted);font-size:17px}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
+.cert{display:flex;gap:16px;align-items:center;padding:18px 20px}
+.cert .yr{flex:none;min-width:66px;height:48px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--a),var(--b));font-family:Sora,sans-serif;font-size:15px;font-weight:700}
+.cert h3{font-size:17px;line-height:1.35;margin-bottom:2px}
+.cert p{color:var(--muted);font-size:15px}
+.edu{padding:26px}
+.edu h3{font-size:22px;margin-bottom:4px}
+.edu p{color:var(--muted)}
+footer{padding:100px 0 50px;text-align:center}
+footer h2{font-size:clamp(36px,7vw,64px);font-weight:800;margin-bottom:14px}
+footer p{color:var(--muted);max-width:50ch;margin:0 auto 28px}
+.copy{color:var(--muted);font-size:15px;margin-top:50px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.on{opacity:1;transform:none}
+@media(max-width:800px){.about,.two,.case .body{grid-template-columns:1fr}.case .info,.demo{padding:24px}.step:not(:last-child)::after{display:none}.stats{grid-template-columns:1fr 1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+html{scroll-padding-top:96px}
+header.bar{background:rgba(20,10,46,.94)}
+.burger{display:none;flex:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.burger span{display:block;width:18px;height:2px;border-radius:2px;background:var(--text);transition:transform .25s,opacity .25s}
+.bar.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bar.open .burger span:nth-child(2){opacity:0}
+.bar.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-row .btn,.links.row .btn{margin:0;text-align:center}
+.links.row{display:flex;flex-wrap:wrap;gap:12px}
+.case .top{overflow-wrap:anywhere}
+.case .body>*{min-width:0}
+.cover{all:unset;box-sizing:border-box;position:relative;display:block;width:100%;height:100%;cursor:pointer;background:#120a2a}
+.cover:focus-visible{outline:2px solid var(--c);outline-offset:-4px}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,6,32,.05),rgba(12,6,32,.55))}
+.play{position:absolute;z-index:1;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 8px 30px rgba(139,92,246,.6);transition:transform .2s}
+.cover:hover .play{transform:scale(1.08)}
+.play::before{content:"";position:absolute;left:27px;top:21px;border-left:20px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent}
+@media(max-width:800px){
+header.bar{padding:8px 8px 8px 20px}
+.burger{display:flex}
+.bar nav{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;align-items:stretch;gap:4px;background:rgba(20,10,46,.98);border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.bar.open nav{display:flex}
+.bar nav a{padding:12px 16px;border-radius:12px;font-size:17px}
+.bar nav a.cta{text-align:center;margin-top:6px}
+.case .body{grid-template-columns:minmax(0,1fr)}
+.more{padding:0 22px 24px}
+}
+@media(max-width:600px){
+.wrap{padding:0 20px}
+section{padding:64px 0}
+.hero{padding:110px 20px 50px}
+.role{min-height:2.9em}
+.stats{grid-template-columns:1fr}
+.stat{display:flex;align-items:center;gap:14px}
+.stat b{font-size:26px;min-width:92px}
+.stat span{font-size:15px}
+.cta-row{max-width:360px;margin-inline:auto}
+.cta-row .btn,.links.row .btn{flex:1 1 100%}
+.case h3{font-size:25px}
+.glance,.edu{padding:22px}
+}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div class="glow g1"></div><div class="glow g2"></div>
+<header class="bar"><b>Layal Alsharif</b>
+<nav id="menu"><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#certifications">Certifications</a><a href="#education">Education</a><a class="cta" href="#contact">Get in touch</a></nav>
+<button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button></header>
+
+<main>
+<div class="hero">
+<span class="pill"><i class="dot"></i>Open to Artificial Intelligence roles</span>
+<h1 class="grad">Layal Alsharif</h1>
+<div class="role"><span id="type"></span><i></i></div>
+<p>Turning AI Into <span class="grad">Practical Solutions.</span></p>
+<div class="cta-row"><a class="btn main" href="#work">View projects</a><a class="btn alt" href="#contact">Get in touch</a></div>
+<div class="scroll">Scroll to explore</div>
+</div>
+
+<section id="about"><div class="wrap rv">
+<div class="label">About</div>
+<div class="head"><h2>From raw document to a <span class="grad">useful answer.</span></h2></div>
+<div class="about">
+<div>
+<p>I’m an Artificial Intelligence graduate from Umm Al-Qura University, with a strong interest in building intelligent solutions that address real-world problems.</p>
+<p>I’m passionate about continuous learning, experimenting with AI technologies, and turning ideas into practical applications. I’m looking forward to growing as an AI professional and contributing to meaningful projects.</p>
+</div>
+<dl class="glass glance"><h3>Professional Snapshot</h3>
+<dt>Location</dt><dd>Makkah, Saudi Arabia</dd>
+<dt>Target Roles</dt><dd>AI Engineer · Machine Learning Engineer · LLM Applications</dd>
+<dt>Availability</dt><dd>Available now</dd></dl>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap rv">
+<div class="label">Skills</div>
+<div class="head"><h2>The tools I use, <span class="grad">data to demo.</span></h2></div>
+<div class="skills">
+<div class="glass skill"><span class="n">01</span><h3>Data</h3><ul class="tags"><li>Python</li><li>Pandas</li><li>NumPy</li><li>Data Processing</li><li>SQL</li></ul></div>
+<div class="glass skill"><span class="n">02</span><h3>Machine Learning &amp; Deep Learning</h3><ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>Scikit-learn</li><li>EEGNet</li><li>OpenCV</li><li>Transfer Learning</li><li>Model Training &amp; Evaluation</li></ul></div>
+<div class="glass skill"><span class="n">03</span><h3>NLP &amp; LLM Tools</h3><ul class="tags"><li>Transformer Models</li><li>ChromaDB</li><li>LangGraph</li><li>RAG</li></ul></div>
+<div class="glass skill"><span class="n">04</span><h3>Development &amp; Tools</h3><ul class="tags"><li>Jupyter Notebook</li><li>Google Colab</li><li>Visual Studio Code</li><li>Git &amp; GitHub</li><li>PySerial</li></ul></div>
+</div>
+<div class="glass skill soft"><h3>Soft Skills</h3><ul class="tags"><li>Analytical Thinking</li><li>Problem-Solving</li><li>Continuous Learning</li><li>Attention to Detail</li><li>Team Collaboration</li><li>Technical Communication</li></ul></div>
+</div></section>
+
+<section id="work"><div class="wrap rv">
+<div class="label">Projects</div>
+<div class="head"><h2>Built end to end, <span class="grad">with the why.</span></h2></div>
+
+<article class="glass case">
+<div class="body">
+<div class="info">
+<div class="top"><b>01</b>Graduation project · Brain–Computer Interface</div>
+<h3>NeuroLink</h3>
+<p>A brain–computer interface that turns imagined movements into commands for a robotic car. EEG is recorded with an 8-channel dry-electrode headset, classified by a lightweight EEGNet model, and sent over WiFi to an ESP32-controlled vehicle. Built as a team of four at Umm Al-Qura University.</p>
+<p class="mine"><b>My role:</b> I was responsible for the complete EEGNet model, from building it to improving it, and for the windowing of the EEG data.</p>
+<div class="stats">
+<div class="stat"><b>73.84%</b><span>LOSO accuracy, 5 commands</span></div>
+<div class="stat"><b>+48.6</b><span>points gained from fine-tuning</span></div>
+<div class="stat"><b>&lt; 1 s</b><span>full pipeline latency</span></div>
+</div>
+<ul class="tags"><li>Python</li><li>TensorFlow</li><li>Keras</li><li>EEGNet</li><li>BrainFlow</li><li>SciPy</li><li>NumPy</li><li>Pandas</li><li>Scikit-learn</li><li>Tkinter</li><li>ESP32</li><li>Arduino IDE</li><li>Google Colab</li></ul>
+</div>
+<div class="demo">
+<div class="vid" data-video="neurolinkVideo"><div class="ph"><i></i>Demo video coming soon</div></div>
+<small>Project demo video</small>
+</div>
+</div>
+<div class="more">
+<div class="links row"><button class="btn main" id="nlCase" data-toggle="nlDetails" type="button" aria-expanded="false" aria-controls="nlDetails">Read case study</button><a class="btn alt off" id="nlRepo" aria-disabled="true">Repo coming soon</a></div>
+<details id="nlDetails"><summary hidden>Case study</summary>
+<h4>How it works</h4>
+<div class="flow">
+<div class="step">Record EEG<small>8 channels, 125 Hz</small></div>
+<div class="step">Preprocess<small>8–30 Hz filter, CAR, z-score</small></div>
+<div class="step">Window<small>2 s, 75% overlap</small></div>
+<div class="step">Classify<small>EEGNet + fine-tuning</small></div>
+<div class="step">Drive<small>HTTP to ESP32 car</small></div>
+</div>
+<h4>Decisions</h4>
+<div class="two">
+<p>I evaluated with Leave-One-Subject-Out cross-validation, so every score comes from a person the base model had never seen. It gives lower numbers than a random split, but it shows how the system really generalizes.</p>
+<p>Each user records a short calibration session. Freezing the first EEGNet block and retraining the rest raised mean accuracy from 25.3% to 73.8%.</p>
+<p>While testing, we found data leakage: windowing happened before the trial-level split, and evaluation data was used for validation during fine-tuning. We fixed both and enforced strict data separation.</p>
+<p>The recording tool rejects poor-quality trials automatically, using band power in the mu and beta ranges and a check on the key motor-cortex channels.</p>
+</div>
+<h4>Results and limits</h4>
+<div class="two">
+<p>On the validation set, recall was 97% for stop, 89% for right, 88% for left, 87% for backward, and 78% for forward. Foot imagery is the hardest to separate with only 8 electrodes.</p>
+<p>The dataset is small: 5 participants with 3 sessions each. In the semi-real-time test on unseen recorded files, a new user reached 92% (23/25) and a previously seen user 64% (16/25), so results vary a lot between people. The test replays recorded EEG rather than a live stream.</p>
+</div>
+</details></div>
+</article>
+
+<article class="glass case">
+<div class="body">
+<div class="info">
+<div class="top"><b>02</b>Co-op training project · Risk management platform</div>
+<h3>Nabaahah</h3>
+<p>A risk management and business continuity platform, designed during my co-op training at the Amanah of the Holy Capital, Digital Transformation Agency. I designed a comprehensive prototype of a smart digital risk management system for municipal agencies.</p>
+<p>The project came from a real gap: the agency had no automated tool for risk and business continuity management, and relied on paper records and Excel sheets. The prototype replaces them with one modern digital platform.</p>
+<p><b style="color:var(--text)">Features:</b> predictive risk analytics, interactive risk classification dashboards, decision-support reports, and an AI-powered chatbot for employee assistance.</p>
+<p>The poster, the presentation, and all the project materials are available through the link below.</p>
+<ul class="tags"><li>Prototyping</li><li>Dashboard design</li><li>Risk management</li><li>Business continuity</li></ul>
+</div>
+<div class="demo">
+<div class="vid" data-img="nabaahahImage" data-alt="Nabaahah prototype screens"><div class="ph pic"><i></i>Screenshot coming soon</div></div>
+</div>
+</div>
+<div class="more"><div class="links row"><a class="btn main off" data-link="nabaahahLink" data-label="View Project Materials">Project Materials link coming soon</a></div></div>
+</article>
+
+<article class="glass case">
+<div class="body">
+<div class="info">
+<div class="top"><b>03</b>Course project · AI System Design</div>
+<h3>Hybrid Movie Recommendation System</h3>
+<p>A hybrid recommendation engine that combines collaborative and content-based filtering using the LightFM library. It delivers personalized movie recommendations by integrating each user’s interaction history with item metadata.</p>
+<ul class="tags"><li>Python</li><li>LightFM</li><li>Collaborative filtering</li><li>Content-based filtering</li></ul>
+</div>
+<div class="demo">
+<div class="vid" data-video="recommenderVideo"><div class="ph"><i></i>Demo video coming soon</div></div>
+</div>
+</div>
+<div class="more"><div class="links row"><a class="btn main off" data-link="recommenderRepo" data-label="View on GitHub">Repo coming soon</a></div></div>
+</article>
+
+<article class="glass case">
+<div class="body">
+<div class="info">
+<div class="top"><b>04</b>LLM application · Document AI</div>
+<h3>AI Resume Screener</h3>
+<p>Upload a CV, paste a job description, and get a match score with strengths, gaps, and a recommendation. The app turns the CV into structured data, pulls the requirements out of the job description, and matches skills by meaning instead of exact words.</p>
+<div class="stats">
+<div class="stat"><b>3</b><span>pipeline stages</span></div>
+<div class="stat"><b>2</b><span>job descriptions tested</span></div>
+<div class="stat"><b>0</b><span>manual skill entries</span></div>
+</div>
+<ul class="tags"><li>Python</li><li>Streamlit</li><li>Groq API</li><li>openai SDK</li><li>gpt-oss-120b</li><li>PyPDF2</li><li>python-docx</li><li>Prompt design</li><li>JSON output</li></ul>
+</div>
+<div class="demo">
+<div class="vid" data-img="resumeImage" data-alt="AI Resume Screener result screen"><div class="ph pic"><i></i>Screenshot coming soon</div></div>
+</div>
+</div>
+<div class="more">
+<div class="links row"><button class="btn main" id="rsCase" data-toggle="rsDetails" type="button" aria-expanded="false" aria-controls="rsDetails">Read case study</button><a class="btn alt" href="https://github.com/Layali1/ai-resume-screener" target="_blank" rel="noopener">View repo</a></div>
+<details id="rsDetails"><summary hidden>Case study</summary>
+<h4>How it works</h4>
+<div class="flow">
+<div class="step">Upload CV<small>PDF or DOCX</small></div>
+<div class="step">Extract text<small>PyPDF2, python-docx</small></div>
+<div class="step">Structure<small>LLM returns JSON</small></div>
+<div class="step">Compare<small>skills matched by meaning</small></div>
+<div class="step">Report<small>score, strengths, gaps</small></div>
+</div>
+<h4>Decisions</h4>
+<div class="two">
+<p>Skills are matched by meaning with an LLM instead of exact word comparison, so different wordings of the same skill still match. The score combines a simple skill-match calculation with an LLM analysis of context.</p>
+<p>Required skills are extracted automatically from the job description, with soft skills left out and no tools added that the posting doesn’t mention. The first version asked users to type them in, which caused matching errors.</p>
+<p>I started on the Gemini API free tier, then moved to Groq after repeated 503 errors and the daily request limit. The first Groq model I tried didn’t work for this task, so the final version runs openai/gpt-oss-120b.</p>
+<p>I tested it on a bank graduate-program description and an accounting job description. It runs locally, and the repo includes a README with screenshots of the test runs.</p>
+</div>
+</details></div>
+</article>
+
+<div class="glass soon"><div class="label">In progress</div><h3>RAG Document Q&amp;A</h3><p>A bilingual RAG system that answers questions from the user’s own files and cites the source of each answer.</p></div>
+<div class="glass soon"><div class="label">Planned</div><h3>Meeting Summarizer</h3><p>Turns a meeting transcript into decisions and action items.</p></div>
+</div></section>
+
+<section id="certifications"><div class="wrap rv">
+<div class="label">Certifications</div>
+<div class="head"><h2>Certifications I’ve <span class="grad">earned.</span></h2></div>
+<div class="certs">
+<div class="glass cert"><span class="yr">2025</span><div><h3>Mathematics for Machine Learning and Data Science Specialization</h3><p>DeepLearning.AI</p></div></div>
+<div class="glass cert"><span class="yr">2025</span><div><h3>Generative AI: Impact, Considerations, and Ethical Issues</h3><p>IBM</p></div></div>
+<div class="glass cert"><span class="yr">2025</span><div><h3>Generative AI for Everyone</h3><p>DeepLearning.AI</p></div></div>
+<div class="glass cert"><span class="yr">2025</span><div><h3>Natural Language Processing with Classification and Vector Spaces</h3><p>DeepLearning.AI</p></div></div>
+<div class="glass cert"><span class="yr">2025</span><div><h3>Leadership and Innovation in the Government Sector</h3><p>Digital Government Authority</p></div></div>
+<div class="glass cert"><span class="yr">2024</span><div><h3>Machine Learning with Python</h3><p>IBM</p></div></div>
+<div class="glass cert"><span class="yr">2024</span><div><h3>Python for Data Science, AI &amp; Development</h3><p>IBM</p></div></div>
+<div class="glass cert"><span class="yr">2024</span><div><h3>Introduction to Generative AI Learning Path Specialization</h3><p>Google Cloud</p></div></div>
+</div>
+</div></section>
+
+<section id="education"><div class="wrap rv">
+<div class="label">Education</div>
+<div class="head"><h2>My degree.</h2></div>
+<div class="glass edu"><h3>BSc in Artificial Intelligence</h3><p>Umm Al-Qura University</p><p>Graduated June 2026 · Excellent with Second Class Honors</p></div>
+<!--
+Add certifications by copying this block:
+<div class="glass edu" style="margin-top:16px"><h3>Certificate name</h3><p>Provider</p></div>
+-->
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap rv">
+<div class="label">Contact</div>
+<h2 class="grad">Let's talk.</h2>
+<p>I'm open to junior AI roles and internships. The fastest way to reach me is email, or find me on LinkedIn and GitHub.</p>
+<div class="cta-row"><a class="btn alt" href="mailto:layalalsharef@gmail.com">Email</a><a class="btn alt" href="https://www.linkedin.com/in/layal-al-sharif-993637275/" target="_blank" rel="noopener">LinkedIn</a><a class="btn alt" href="https://github.com/Layali1" target="_blank" rel="noopener">GitHub</a></div>
+<div class="copy">© 2026 Layal Alsharif</div>
+</div></footer>
+
+<script>
+/* Paste your links between the quotes. Leave empty to keep the placeholder.
+   Upload each image or video next to index.html and write its exact file name, for example nabaahah.jpeg or demo.mp4 */
+var LINKS={
+  neurolinkVideo:"https://youtu.be/Yd3ssUxPNyg",     /* YouTube link, or a video file name such as neurolink.mp4 */
+  neurolinkRepo:"https://github.com/NeuroLink-BCI/NeuroLink",
+  nabaahahLink:"https://drive.google.com/drive/folders/1D98Q6Pw0BPIqcqhHRdiBwLUPqYIZYQCs",
+  nabaahahImage:"nabaahah.jpeg",
+  recommenderVideo:"https://youtu.be/kw88eapZgL0",   /* YouTube link, or a video file name such as recommender.mp4 */
+  recommenderRepo:"https://github.com/Malathsa/Hybrid-Movie-Recommendation-System-LightFM-Based-",
+  resumeImage:"resume.jpeg"
+};
+(function(){
+function enc(u){return u.indexOf("%")<0?encodeURI(u):u}
+function val(k){return(LINKS[k]||"").trim()}
+function loadImg(d,u,alt){var ph=d.innerHTML,base=u.replace(/\.[A-Za-z0-9]+$/,""),t=[u];
+["jpeg","jpg","png","webp","JPG","JPEG","PNG"].forEach(function(e){var c=base+"."+e;if(t.indexOf(c)<0)t.push(c)});
+var k=0,i=new Image();i.alt=alt;
+i.onload=function(){d.innerHTML="";d.appendChild(i)};
+i.onerror=function(){k++;if(k<t.length){i.src=enc(t[k])}else{d.innerHTML=ph}};
+i.src=enc(t[0])}
+function ytCover(d,id){var im=new Image();im.alt="";im.src="https://i.ytimg.com/vi/"+id+"/hq720.jpg";
+im.onerror=function(){im.onerror=function(){im.style.display="none"};im.src="https://i.ytimg.com/vi/"+id+"/hqdefault.jpg"};
+var bt=document.createElement("button");bt.type="button";bt.className="cover";bt.setAttribute("aria-label","Play demo video");
+bt.appendChild(im);var p=document.createElement("span");p.className="play";bt.appendChild(p);
+bt.onclick=function(){d.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3" title="Demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'};
+d.innerHTML="";d.appendChild(bt)}
+var b=document.getElementById("nlRepo");
+if(val("neurolinkRepo")){b.href=val("neurolinkRepo");b.target="_blank";b.rel="noopener";b.textContent="View repo";b.classList.remove("off");b.removeAttribute("aria-disabled")}
+document.querySelectorAll("[data-link]").forEach(function(a){var u=val(a.dataset.link);if(u){a.href=u;a.target="_blank";a.rel="noopener";a.textContent=a.dataset.label;a.classList.remove("off")}});
+document.querySelectorAll("[data-img]").forEach(function(d){var u=val(d.dataset.img);if(u)loadImg(d,u,d.dataset.alt||"")});
+document.querySelectorAll("[data-video]").forEach(function(d){var u=val(d.dataset.video);if(!u)return;var ph=d.innerHTML;
+if(/\.(mp4|webm)(\?.*)?$/i.test(u)){var v=document.createElement("video");v.controls=true;v.playsInline=true;v.preload="metadata";v.onerror=function(){d.innerHTML=ph};v.src=enc(u)+"#t=0.1";d.innerHTML="";d.appendChild(v)}
+else{var m=u.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);if(m)ytCover(d,m[1])}});
+document.querySelectorAll("[data-toggle]").forEach(function(btn){var d=document.getElementById(btn.dataset.toggle);btn.addEventListener("click",function(){d.open=!d.open;btn.setAttribute("aria-expanded",d.open);btn.textContent=d.open?"Hide case study":"Read case study"})});
+var bar=document.querySelector(".bar"),bg=document.getElementById("burger");
+function closeMenu(){bar.classList.remove("open");bg.setAttribute("aria-expanded","false")}
+bg.addEventListener("click",function(){var o=bar.classList.toggle("open");bg.setAttribute("aria-expanded",o)});
+document.querySelectorAll(".bar nav a").forEach(function(a){a.addEventListener("click",closeMenu)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu()});
+document.addEventListener("click",function(e){if(!bar.contains(e.target))closeMenu()});
+})();
+</script>
+<script>
+(function(){
+var still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var cv=document.getElementById("bg"),cx=cv.getContext("2d"),pts=[],W,H;
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;pts=[];for(var i=0;i<Math.min(70,W/16);i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+function draw(){cx.clearRect(0,0,W,H);for(var i=0;i<pts.length;i++){var p=pts[i];if(!still){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+cx.fillStyle="rgba(192,132,252,.7)";cx.beginPath();cx.arc(p.x,p.y,1.8,0,7);cx.fill();
+for(var j=i+1;j<pts.length;j++){var q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<140){cx.strokeStyle="rgba(167,125,255,"+(.28*(1-d/140))+")";cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}}
+if(!still)requestAnimationFrame(draw)}
+addEventListener("resize",size);size();draw();
+var roles=["Robotics & Intelligent Systems","Brain–Computer Interfaces (BCI)","Explainable AI","Data Processing & Analysis","Computer Vision","Retrieval-Augmented Generation (RAG)","Generative AI","Large Language Models (LLMs)","Natural Language Processing (NLP)","Deep Learning","Machine Learning"],ri=0,ci=0,del=false,el=document.getElementById("type");
+function tick(){var w=roles[ri];if(still){el.textContent=w;return}
+ci+=del?-1:1;el.textContent=w.slice(0,ci);var t=del?40:80;
+if(!del&&ci===w.length){del=true;t=1600}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;t=300}
+setTimeout(tick,t)}
+tick();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(n){io.observe(n)});
+})();
+</script>
+</body>
+</html>
